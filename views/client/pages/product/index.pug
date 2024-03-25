@@ -1,0 +1,23 @@
+extends ../../default/index.pug
+block main
+    
+   .card.mb-3  
+    .card-header Danh sách sản phẩm bên Người dùng
+     .card-body
+      .row
+ 
+   
+     
+        each item of listcar
+         .col-4.mb-12
+          .product-item
+           .inner-image
+            img(src=item.thumbnail,width="200px")   
+       
+           .inner-content
+            h3.inner-title
+            
+            .inner-price-new Giá mới: #{item.pricenew}$
+            .inner-price-old Giá cũ #{item.price}$
+            .inner-discount  Giảm giá :-#{item.discountPercentage}%
+            .inner-description  Thông tin sản phẩm :#{item.description}
